@@ -1,0 +1,44 @@
+﻿@model MvcApplication1.Models.tb_Alumno
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>tb_Alumno</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.cod_alumno)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.cod_alumno)
+            @Html.ValidationMessageFor(model => model.cod_alumno)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.nom_alumno)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.nom_alumno)
+            @Html.ValidationMessageFor(model => model.nom_alumno)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,33 @@
+﻿@model MvcApplication1.Models.tb_Alumno
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>tb_Alumno</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.cod_alumno)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.cod_alumno)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.nom_alumno)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.nom_alumno)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}
