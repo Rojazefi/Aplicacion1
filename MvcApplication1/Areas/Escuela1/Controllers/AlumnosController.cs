@@ -21,6 +21,9 @@ namespace MvcApplication1.Areas.Escuela1.Controllers
             return View(db.tb_Alumno.ToList());
         }
 
+        // Se realizo un Cambio Determinado a este Controlador
+
+
         //
         // GET: /Escuela1/Alumnos/Details/5
 
